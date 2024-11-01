@@ -1,0 +1,394 @@
+% $ biblatex auxiliary file $
+% $ biblatex bbl format version 3.1 $
+% Do not modify the above lines!
+%
+% This is an auxiliary file used by the 'biblatex' package.
+% This file may safely be deleted. It will be recreated as
+% required.
+%
+\begingroup
+\makeatletter
+\@ifundefined{ver@biblatex.sty}
+  {\@latex@error
+     {Missing 'biblatex' package}
+     {The bibliography requires the 'biblatex' package.}
+      \aftergroup\endinput}
+  {}
+\endgroup
+
+\datalist[entry]{nyt/global//global/global}
+  \entry{NIPS2015_1068c6e4}{inproceedings}{}
+    \name{author}{5}{}{%
+      {{hash=CJK}{%
+         family={Chorowski},
+         familyi={C\bibinitperiod},
+         given={Jan\bibnamedelima K},
+         giveni={J\bibinitperiod\bibinitdelim K\bibinitperiod},
+      }}%
+      {{hash=BD}{%
+         family={Bahdanau},
+         familyi={B\bibinitperiod},
+         given={Dzmitry},
+         giveni={D\bibinitperiod},
+      }}%
+      {{hash=SD}{%
+         family={Serdyuk},
+         familyi={S\bibinitperiod},
+         given={Dmitriy},
+         giveni={D\bibinitperiod},
+      }}%
+      {{hash=CK}{%
+         family={Cho},
+         familyi={C\bibinitperiod},
+         given={Kyunghyun},
+         giveni={K\bibinitperiod},
+      }}%
+      {{hash=BY}{%
+         family={Bengio},
+         familyi={B\bibinitperiod},
+         given={Yoshua},
+         giveni={Y\bibinitperiod},
+      }}%
+    }
+    \name{editor}{5}{}{%
+      {{hash=CC}{%
+         family={Cortes},
+         familyi={C\bibinitperiod},
+         given={C.},
+         giveni={C\bibinitperiod},
+      }}%
+      {{hash=LN}{%
+         family={Lawrence},
+         familyi={L\bibinitperiod},
+         given={N.},
+         giveni={N\bibinitperiod},
+      }}%
+      {{hash=LD}{%
+         family={Lee},
+         familyi={L\bibinitperiod},
+         given={D.},
+         giveni={D\bibinitperiod},
+      }}%
+      {{hash=SM}{%
+         family={Sugiyama},
+         familyi={S\bibinitperiod},
+         given={M.},
+         giveni={M\bibinitperiod},
+      }}%
+      {{hash=GR}{%
+         family={Garnett},
+         familyi={G\bibinitperiod},
+         given={R.},
+         giveni={R\bibinitperiod},
+      }}%
+    }
+    \list{publisher}{1}{%
+      {Curran Associates, Inc.}%
+    }
+    \strng{namehash}{CJK+1}
+    \strng{fullhash}{CJKBDSDCKBY1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{labelyear}{2015}
+    \field{labeldatesource}{}
+    \field{sortinit}{C}
+    \field{sortinithash}{C}
+    \field{booktitle}{Advances in Neural Information Processing Systems}
+    \field{title}{Attention-Based Models for Speech Recognition}
+    \verb{url}
+    \verb https://proceedings.neurips.cc/paper_files/paper/2015/file/1068c6e4c8
+    \verb 051cfd4e9ea8072e3189e2-Paper.pdf
+    \endverb
+    \field{volume}{28}
+    \field{year}{2015}
+  \endentry
+
+  \entry{graves2012sequencetransductionrecurrentneural}{misc}{}
+    \name{author}{1}{}{%
+      {{hash=GA}{%
+         family={Graves},
+         familyi={G\bibinitperiod},
+         given={Alex},
+         giveni={A\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{GA1}
+    \strng{fullhash}{GA1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{labelyear}{2012}
+    \field{labeldatesource}{}
+    \field{sortinit}{G}
+    \field{sortinithash}{G}
+    \verb{eprint}
+    \verb 1211.3711
+    \endverb
+    \field{title}{Sequence Transduction with Recurrent Neural Networks}
+    \verb{url}
+    \verb https://arxiv.org/abs/1211.3711
+    \endverb
+    \field{eprinttype}{arXiv}
+    \field{eprintclass}{cs.NE}
+    \field{year}{2012}
+  \endentry
+
+  \entry{graves2013deeprecurrentneuralnetworks}{inproceedings}{}
+    \name{author}{3}{}{%
+      {{hash=GA}{%
+         family={Graves},
+         familyi={G\bibinitperiod},
+         given={Alex},
+         giveni={A\bibinitperiod},
+      }}%
+      {{hash=MAr}{%
+         family={Mohamed},
+         familyi={M\bibinitperiod},
+         given={Abdel-rahman},
+         giveni={A\bibinithyphendelim r\bibinitperiod},
+      }}%
+      {{hash=HG}{%
+         family={Hinton},
+         familyi={H\bibinitperiod},
+         given={Geoffrey},
+         giveni={G\bibinitperiod},
+      }}%
+    }
+    \keyw{Speech recognition;Recurrent neural
+  networks;Training;Vectors;Acoustics;Noise;recurrent neural networks;deep
+  neural networks;speech recognition}
+    \strng{namehash}{GAMArHG1}
+    \strng{fullhash}{GAMArHG1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{labelyear}{2013}
+    \field{labeldatesource}{}
+    \field{sortinit}{G}
+    \field{sortinithash}{G}
+    \field{booktitle}{2013 IEEE International Conference on Acoustics, Speech
+  and Signal Processing}
+    \verb{doi}
+    \verb 10.1109/ICASSP.2013.6638947
+    \endverb
+    \field{pages}{6645\bibrangedash 6649}
+    \field{title}{Speech recognition with deep recurrent neural networks}
+    \field{year}{2013}
+  \endentry
+
+  \entry{GravesCTC2006}{inproceedings}{}
+    \name{author}{4}{}{%
+      {{hash=GA}{%
+         family={Graves},
+         familyi={G\bibinitperiod},
+         given={Alex},
+         giveni={A\bibinitperiod},
+      }}%
+      {{hash=FS}{%
+         family={Fernández},
+         familyi={F\bibinitperiod},
+         given={Santiago},
+         giveni={S\bibinitperiod},
+      }}%
+      {{hash=GF}{%
+         family={Gomez},
+         familyi={G\bibinitperiod},
+         given={Faustino},
+         giveni={F\bibinitperiod},
+      }}%
+      {{hash=SJ}{%
+         family={Schmidhuber},
+         familyi={S\bibinitperiod},
+         given={Jürgen},
+         giveni={J\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{GA+1}
+    \strng{fullhash}{GAFSGFSJ1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{labelyear}{2006}
+    \field{labeldatesource}{}
+    \field{sortinit}{G}
+    \field{sortinithash}{G}
+    \verb{doi}
+    \verb 10.1145/1143844.1143891
+    \endverb
+    \field{pages}{369\bibrangedash 376}
+    \field{title}{Connectionist temporal classification: Labelling unsegmented
+  sequence data with recurrent neural 'networks}
+    \field{volume}{2006}
+    \field{journaltitle}{ICML 2006 - Proceedings of the 23rd International
+  Conference on Machine Learning}
+    \field{month}{01}
+    \field{year}{2006}
+  \endentry
+
+  \entry{PrabhavalkarEnd-to-End2024}{article}{}
+    \name{author}{5}{}{%
+      {{hash=PR}{%
+         family={Prabhavalkar},
+         familyi={P\bibinitperiod},
+         given={Rohit},
+         giveni={R\bibinitperiod},
+      }}%
+      {{hash=HT}{%
+         family={Hori},
+         familyi={H\bibinitperiod},
+         given={Takaaki},
+         giveni={T\bibinitperiod},
+      }}%
+      {{hash=STN}{%
+         family={Sainath},
+         familyi={S\bibinitperiod},
+         given={Tara\bibnamedelima N.},
+         giveni={T\bibinitperiod\bibinitdelim N\bibinitperiod},
+      }}%
+      {{hash=SR}{%
+         family={Schlüter},
+         familyi={S\bibinitperiod},
+         given={Ralf},
+         giveni={R\bibinitperiod},
+      }}%
+      {{hash=WS}{%
+         family={Watanabe},
+         familyi={W\bibinitperiod},
+         given={Shinji},
+         giveni={S\bibinitperiod},
+      }}%
+    }
+    \keyw{Hidden Markov models;Training;Data models;Acoustics;Task
+  analysis;Deep learning;Decoding;End-to-end;automatic speech recognition}
+    \strng{namehash}{PR+1}
+    \strng{fullhash}{PRHTSTNSRWS1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{labelyear}{2024}
+    \field{labeldatesource}{}
+    \field{sortinit}{P}
+    \field{sortinithash}{P}
+    \verb{doi}
+    \verb 10.1109/TASLP.2023.3328283
+    \endverb
+    \field{pages}{325\bibrangedash 351}
+    \field{title}{End-to-End Speech Recognition: A Survey}
+    \field{volume}{32}
+    \field{journaltitle}{IEEE/ACM Transactions on Audio, Speech, and Language
+  Processing}
+    \field{year}{2024}
+  \endentry
+
+  \entry{sak17_interspeech}{inproceedings}{}
+    \name{author}{4}{}{%
+      {{hash=SH}{%
+         family={Sak},
+         familyi={S\bibinitperiod},
+         given={Haşim},
+         giveni={H\bibinitperiod},
+      }}%
+      {{hash=SM}{%
+         family={Shannon},
+         familyi={S\bibinitperiod},
+         given={Matt},
+         giveni={M\bibinitperiod},
+      }}%
+      {{hash=RK}{%
+         family={Rao},
+         familyi={R\bibinitperiod},
+         given={Kanishka},
+         giveni={K\bibinitperiod},
+      }}%
+      {{hash=BF}{%
+         family={Beaufays},
+         familyi={B\bibinitperiod},
+         given={Françoise},
+         giveni={F\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{SH+1}
+    \strng{fullhash}{SHSMRKBF1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{labelyear}{2017}
+    \field{labeldatesource}{}
+    \field{sortinit}{S}
+    \field{sortinithash}{S}
+    \field{booktitle}{Interspeech 2017}
+    \verb{doi}
+    \verb 10.21437/Interspeech.2017-1705
+    \endverb
+    \field{issn}{2958-1796}
+    \field{pages}{1298\bibrangedash 1302}
+    \field{title}{Recurrent Neural Aligner: An Encoder-Decoder Neural Network
+  Model for Sequence to Sequence Mapping}
+    \field{year}{2017}
+  \endentry
+
+  \entry{sym11081018}{article}{}
+    \name{author}{3}{}{%
+      {{hash=WD}{%
+         family={Wang},
+         familyi={W\bibinitperiod},
+         given={Dong},
+         giveni={D\bibinitperiod},
+      }}%
+      {{hash=WX}{%
+         family={Wang},
+         familyi={W\bibinitperiod},
+         given={Xiaodong},
+         giveni={X\bibinitperiod},
+      }}%
+      {{hash=LS}{%
+         family={Lv},
+         familyi={L\bibinitperiod},
+         given={Shaohe},
+         giveni={S\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{WDWXLS1}
+    \strng{fullhash}{WDWXLS1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{labelyear}{2019}
+    \field{labeldatesource}{}
+    \field{sortinit}{W}
+    \field{sortinithash}{W}
+    \field{abstract}{%
+    Automatic speech recognition, especially large vocabulary continuous speech
+  recognition, is an important issue in the field of machine learning. For a
+  long time, the hidden Markov model (HMM)-Gaussian mixed model (GMM) has been
+  the mainstream speech recognition framework. But recently, HMM-deep neural
+  network (DNN) model and the end-to-end model using deep learning has achieved
+  performance beyond HMM-GMM. Both using deep learning techniques, these two
+  models have comparable performances. However, the HMM-DNN model itself is
+  limited by various unfavorable factors such as data forced segmentation
+  alignment, independent hypothesis, and multi-module individual training
+  inherited from HMM, while the end-to-end model has a simplified model, joint
+  training, direct output, no need to force data alignment and other
+  advantages. Therefore, the end-to-end model is an important research
+  direction of speech recognition. In this paper we review the development of
+  end-to-end model. This paper first introduces the basic ideas, advantages and
+  disadvantages of HMM-based model and end-to-end models, and points out that
+  end-to-end model is the development direction of speech recognition. Then the
+  article focuses on the principles, progress and research hotspots of three
+  different end-to-end models, which are connectionist temporal classification
+  (CTC)-based, recurrent neural network (RNN)-transducer and attention-based,
+  and makes theoretically and experimentally detailed comparisons. Their
+  respective advantages and disadvantages and the possible future development
+  of the end-to-end model are finally pointed out. Automatic speech recognition
+  is a pattern recognition task in the field of computer science, which is a
+  subject area of Symmetry.%
+    }
+    \verb{doi}
+    \verb 10.3390/sym11081018
+    \endverb
+    \field{issn}{2073-8994}
+    \field{number}{8}
+    \field{title}{An Overview of End-to-End Automatic Speech Recognition}
+    \verb{url}
+    \verb https://www.mdpi.com/2073-8994/11/8/1018
+    \endverb
+    \field{volume}{11}
+    \field{journaltitle}{Symmetry}
+    \field{year}{2019}
+  \endentry
+\enddatalist
+\endinput

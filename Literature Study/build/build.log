@@ -1,0 +1,682 @@
+This is pdfTeX, Version 3.14159265-2.6-1.40.21 (MiKTeX 21.1) (preloaded format=pdflatex 2021.2.10)  1 NOV 2024 14:40
+entering extended mode
+**"c:/Users/joona/Documents/koulu/Aalto/ELEC-E5510 - Speech Recognition D/Literature Study/version1.tex"
+("c:/Users/joona/Documents/koulu/Aalto/ELEC-E5510 - Speech Recognition D/Literature Study/version1.tex"
+LaTeX2e <2020-10-01> patch level 4
+L3 programming layer <2021-01-09> xparse <2020-03-03> ("C:\Users\joona\AppData\Local\Programs\MiKTeX 2.9\tex/latex/base\article.cls"
+Document Class: article 2020/04/10 v1.4m Standard LaTeX document class
+("C:\Users\joona\AppData\Local\Programs\MiKTeX 2.9\tex/latex/base\size10.clo"
+File: size10.clo 2020/04/10 v1.4m Standard LaTeX file (size option)
+)
+\c@part=\count177
+\c@section=\count178
+\c@subsection=\count179
+\c@subsubsection=\count180
+\c@paragraph=\count181
+\c@subparagraph=\count182
+\c@figure=\count183
+\c@table=\count184
+\abovecaptionskip=\skip47
+\belowcaptionskip=\skip48
+\bibindent=\dimen138
+) ("c:/Users\joona\Documents\koulu\Aalto\ELEC-E5510 - Speech Recognition D\Literature Study\preamble.tex" ("C:\Users\joona\AppData\Local\Programs\MiKTeX 2.9\tex/generic/babel\babel.sty"
+Package: babel 2021/01/26 3.53 The Babel package
+ ("C:\Users\joona\AppData\Local\Programs\MiKTeX 2.9\tex/generic/babel\babel.def"
+File: babel.def 2021/01/26 3.53 Babel common definitions
+\babel@savecnt=\count185
+\U@D=\dimen139
+\l@babelnohyphens=\language83
+ ("C:\Users\joona\AppData\Local\Programs\MiKTeX 2.9\tex/generic/babel\txtbabel.def")
+\bbl@readstream=\read2
+)
+\bbl@dirlevel=\count186
+
+*************************************
+* Local config file bblopts.cfg used
+*
+("C:\Users\joona\AppData\Local\Programs\MiKTeX 2.9\tex/latex/arabi\bblopts.cfg"
+File: bblopts.cfg 2005/09/08 v0.1 add Arabic and Farsi to "declared" options of babel
+) ("C:\Users\joona\AppData\Local\Programs\MiKTeX 2.9\tex/latex/babel-english\english.ldf"
+Language: english 2017/06/06 v3.3r English support from the babel system
+Package babel Info: \l@canadian = using hyphenrules for english
+(babel)             (\language0) on input line 102.
+Package babel Info: \l@australian = using hyphenrules for ukenglish
+(babel)             (\language77) on input line 105.
+Package babel Info: \l@newzealand = using hyphenrules for ukenglish
+(babel)             (\language77) on input line 108.
+)) ("C:\Users\joona\AppData\Local\Programs\MiKTeX 2.9\tex/latex/base\inputenc.sty"
+Package: inputenc 2020/08/01 v1.3d Input encoding file
+\inpenc@prehook=\toks15
+\inpenc@posthook=\toks16
+) ("C:\Users\joona\AppData\Local\Programs\MiKTeX 2.9\tex/latex/base\fontenc.sty"
+Package: fontenc 2020/08/10 v2.0s Standard LaTeX package
+) ("C:\Users\joona\AppData\Local\Programs\MiKTeX 2.9\tex/latex/outlines\outlines.sty"
+Package: outlines 2012/1/23 1.1 Ch. Pecheur
+ ("C:\Users\joona\AppData\Local\Programs\MiKTeX 2.9\tex/latex/base\ifthen.sty"
+Package: ifthen 2014/09/29 v1.1c Standard LaTeX ifthen package (DPC)
+)) ("C:\Users\joona\AppData\Local\Programs\MiKTeX 2.9\tex/latex/graphics\graphicx.sty"
+Package: graphicx 2020/09/09 v1.2b Enhanced LaTeX Graphics (DPC,SPQR)
+ ("C:\Users\joona\AppData\Local\Programs\MiKTeX 2.9\tex/latex/graphics\keyval.sty"
+Package: keyval 2014/10/28 v1.15 key=value parser (DPC)
+\KV@toks@=\toks17
+) ("C:\Users\joona\AppData\Local\Programs\MiKTeX 2.9\tex/latex/graphics\graphics.sty"
+Package: graphics 2020/08/30 v1.4c Standard LaTeX Graphics (DPC,SPQR)
+ ("C:\Users\joona\AppData\Local\Programs\MiKTeX 2.9\tex/latex/graphics\trig.sty"
+Package: trig 2016/01/03 v1.10 sin cos tan (DPC)
+) ("C:\Users\joona\AppData\Local\Programs\MiKTeX 2.9\tex/latex/graphics-cfg\graphics.cfg"
+File: graphics.cfg 2016/06/04 v1.11 sample graphics configuration
+)
+Package graphics Info: Driver file: pdftex.def on input line 105.
+ ("C:\Users\joona\AppData\Local\Programs\MiKTeX 2.9\tex/latex/graphics-def\pdftex.def"
+File: pdftex.def 2020/10/05 v1.2a Graphics/color driver for pdftex
+))
+\Gin@req@height=\dimen140
+\Gin@req@width=\dimen141
+) ("C:\Users\joona\AppData\Local\Programs\MiKTeX 2.9\tex/latex/titlesec\titlesec.sty"
+Package: titlesec 2019/10/16 v2.13 Sectioning titles
+\ttl@box=\box47
+\beforetitleunit=\skip49
+\aftertitleunit=\skip50
+\ttl@plus=\dimen142
+\ttl@minus=\dimen143
+\ttl@toksa=\toks18
+\titlewidth=\dimen144
+\titlewidthlast=\dimen145
+\titlewidthfirst=\dimen146
+) ("C:\Users\joona\AppData\Local\Programs\MiKTeX 2.9\tex/latex/latex-tools\tabularx.sty"
+Package: tabularx 2020/01/15 v2.11c `tabularx' package (DPC)
+ ("C:\Users\joona\AppData\Local\Programs\MiKTeX 2.9\tex/latex/latex-tools\array.sty"
+Package: array 2020/10/01 v2.5c Tabular extension package (FMi)
+\col@sep=\dimen147
+\ar@mcellbox=\box48
+\extrarowheight=\dimen148
+\NC@list=\toks19
+\extratabsurround=\skip51
+\backup@length=\skip52
+\ar@cellbox=\box49
+)
+\TX@col@width=\dimen149
+\TX@old@table=\dimen150
+\TX@old@col=\dimen151
+\TX@target=\dimen152
+\TX@delta=\dimen153
+\TX@cols=\count187
+\TX@ftn=\toks20
+) ("C:\Users\joona\AppData\Local\Programs\MiKTeX 2.9\tex/latex/pdflscape\pdflscape.sty"
+Package: pdflscape 2019/12/05 v0.12 Display of landscape pages in PDF (HO)
+ ("C:\Users\joona\AppData\Local\Programs\MiKTeX 2.9\tex/generic/iftex\iftex.sty"
+Package: iftex 2020/03/06 v1.0d TeX engine tests
+) ("C:\Users\joona\AppData\Local\Programs\MiKTeX 2.9\tex/latex/graphics\lscape.sty"
+Package: lscape 2020/05/28 v3.02 Landscape Pages (DPC)
+)
+Package pdflscape Info: Auto-detected driver: pdftex on input line 81.
+) ("C:\Users\joona\AppData\Local\Programs\MiKTeX 2.9\tex/latex/caption\caption.sty"
+Package: caption 2020/10/26 v3.5g Customizing captions (AR)
+ ("C:\Users\joona\AppData\Local\Programs\MiKTeX 2.9\tex/latex/caption\caption3.sty"
+Package: caption3 2020/10/21 v2.2e caption3 kernel (AR)
+\captionmargin=\dimen154
+\captionmargin@=\dimen155
+\captionwidth=\dimen156
+\caption@tempdima=\dimen157
+\caption@indent=\dimen158
+\caption@parindent=\dimen159
+\caption@hangindent=\dimen160
+Package caption Info: Standard document class detected.
+)
+\c@caption@flags=\count188
+\c@continuedfloat=\count189
+) ("C:\Users\joona\AppData\Local\Programs\MiKTeX 2.9\tex/latex/csquotes\csquotes.sty"
+Package: csquotes 2021-01-04 v5.2k context-sensitive quotations (JAW)
+ ("C:\Users\joona\AppData\Local\Programs\MiKTeX 2.9\tex/latex/etoolbox\etoolbox.sty"
+Package: etoolbox 2020/10/05 v2.5k e-TeX tools for LaTeX (JAW)
+\etb@tempcnta=\count190
+)
+\csq@reset=\count191
+\csq@gtype=\count192
+\csq@glevel=\count193
+\csq@qlevel=\count194
+\csq@maxlvl=\count195
+\csq@tshold=\count196
+\csq@ltx@everypar=\toks21
+ ("C:\Users\joona\AppData\Local\Programs\MiKTeX 2.9\tex/latex/csquotes\csquotes.def"
+File: csquotes.def 2021-01-04 v5.2k csquotes generic definitions (JAW)
+)
+Package csquotes Info: Trying to load configuration file 'csquotes.cfg'...
+Package csquotes Info: ... configuration file loaded successfully.
+ ("C:\Users\joona\AppData\Local\Programs\MiKTeX 2.9\tex/latex/csquotes\csquotes.cfg"
+File: csquotes.cfg 
+)) ("C:\Users\joona\AppData\Local\Programs\MiKTeX 2.9\tex/latex/geometry\geometry.sty"
+Package: geometry 2020/01/02 v5.9 Page Geometry
+ ("C:\Users\joona\AppData\Local\Programs\MiKTeX 2.9\tex/generic/iftex\ifvtex.sty"
+Package: ifvtex 2019/10/25 v1.7 ifvtex legacy package. Use iftex instead.
+)
+\Gm@cnth=\count197
+\Gm@cntv=\count198
+\c@Gm@tempcnt=\count199
+\Gm@bindingoffset=\dimen161
+\Gm@wd@mp=\dimen162
+\Gm@odd@mp=\dimen163
+\Gm@even@mp=\dimen164
+\Gm@layoutwidth=\dimen165
+\Gm@layoutheight=\dimen166
+\Gm@layouthoffset=\dimen167
+\Gm@layoutvoffset=\dimen168
+\Gm@dimlist=\toks22
+ ("C:\Users\joona\AppData\Local\Programs\MiKTeX 2.9\tex/latex/geometry\geometry.cfg")) ("C:\Users\joona\AppData\Local\Programs\MiKTeX 2.9\tex/latex/amsmath\amsmath.sty"
+Package: amsmath 2020/09/23 v2.17i AMS math features
+\@mathmargin=\skip53
+
+For additional information on amsmath, use the `?' option.
+("C:\Users\joona\AppData\Local\Programs\MiKTeX 2.9\tex/latex/amsmath\amstext.sty"
+Package: amstext 2000/06/29 v2.01 AMS text
+ ("C:\Users\joona\AppData\Local\Programs\MiKTeX 2.9\tex/latex/amsmath\amsgen.sty"
+File: amsgen.sty 1999/11/30 v2.0 generic functions
+\@emptytoks=\toks23
+\ex@=\dimen169
+)) ("C:\Users\joona\AppData\Local\Programs\MiKTeX 2.9\tex/latex/amsmath\amsbsy.sty"
+Package: amsbsy 1999/11/29 v1.2d Bold Symbols
+\pmbraise@=\dimen170
+) ("C:\Users\joona\AppData\Local\Programs\MiKTeX 2.9\tex/latex/amsmath\amsopn.sty"
+Package: amsopn 2016/03/08 v2.02 operator names
+)
+\inf@bad=\count266
+LaTeX Info: Redefining \frac on input line 234.
+\uproot@=\count267
+\leftroot@=\count268
+LaTeX Info: Redefining \overline on input line 399.
+\classnum@=\count269
+\DOTSCASE@=\count270
+LaTeX Info: Redefining \ldots on input line 496.
+LaTeX Info: Redefining \dots on input line 499.
+LaTeX Info: Redefining \cdots on input line 620.
+\Mathstrutbox@=\box50
+\strutbox@=\box51
+\big@size=\dimen171
+LaTeX Font Info:    Redeclaring font encoding OML on input line 743.
+LaTeX Font Info:    Redeclaring font encoding OMS on input line 744.
+\macc@depth=\count271
+\c@MaxMatrixCols=\count272
+\dotsspace@=\muskip16
+\c@parentequation=\count273
+\dspbrk@lvl=\count274
+\tag@help=\toks24
+\row@=\count275
+\column@=\count276
+\maxfields@=\count277
+\andhelp@=\toks25
+\eqnshift@=\dimen172
+\alignsep@=\dimen173
+\tagshift@=\dimen174
+\tagwidth@=\dimen175
+\totwidth@=\dimen176
+\lineht@=\dimen177
+\@envbody=\toks26
+\multlinegap=\skip54
+\multlinetaggap=\skip55
+\mathdisplay@stack=\toks27
+LaTeX Info: Redefining \[ on input line 2923.
+LaTeX Info: Redefining \] on input line 2924.
+) ("C:\Users\joona\AppData\Local\Programs\MiKTeX 2.9\tex/latex/amsfonts\amssymb.sty"
+Package: amssymb 2013/01/14 v3.01 AMS font symbols
+ ("C:\Users\joona\AppData\Local\Programs\MiKTeX 2.9\tex/latex/amsfonts\amsfonts.sty"
+Package: amsfonts 2013/01/14 v3.01 Basic AMSFonts support
+\symAMSa=\mathgroup4
+\symAMSb=\mathgroup5
+LaTeX Font Info:    Redeclaring math symbol \hbar on input line 98.
+LaTeX Font Info:    Overwriting math alphabet `\mathfrak' in version `bold'
+(Font)                  U/euf/m/n --> U/euf/b/n on input line 106.
+)) ("C:\Users\joona\AppData\Local\Programs\MiKTeX 2.9\tex/latex/enumitem\enumitem.sty"
+Package: enumitem 2019/06/20 v3.9 Customized lists
+\labelindent=\skip56
+\enit@outerparindent=\dimen178
+\enit@toks=\toks28
+\enit@inbox=\box52
+\enit@count@id=\count278
+\enitdp@description=\count279
+) ("C:\Users\joona\AppData\Local\Programs\MiKTeX 2.9\tex/latex/bbold\bbold.sty"
+Package: bbold 1994/04/06 Bbold symbol package
+LaTeX Font Info:    Redeclaring math alphabet \mathbb on input line 42.
+) ("C:\Users\joona\AppData\Local\Programs\MiKTeX 2.9\tex/latex/braket\braket.sty") ("C:\Users\joona\AppData\Local\Programs\MiKTeX 2.9\tex/latex/cases\cases.sty"
+Package: cases 2020/03/29 ver 3.2
+\numc@numwid=\dimen179
+) ("C:\Users\joona\AppData\Local\Programs\MiKTeX 2.9\tex/latex/adjustbox\adjustbox.sty"
+Package: adjustbox 2020/08/19 v1.3 Adjusting TeX boxes (trim, clip, ...)
+ ("C:\Users\joona\AppData\Local\Programs\MiKTeX 2.9\tex/latex/xkeyval\xkeyval.sty"
+Package: xkeyval 2020/11/20 v2.8 package option processing (HA)
+ ("C:\Users\joona\AppData\Local\Programs\MiKTeX 2.9\tex/generic/xkeyval\xkeyval.tex" ("C:\Users\joona\AppData\Local\Programs\MiKTeX 2.9\tex/generic/xkeyval\xkvutils.tex"
+\XKV@toks=\toks29
+\XKV@tempa@toks=\toks30
+)
+\XKV@depth=\count280
+File: xkeyval.tex 2014/12/03 v2.7a key=value parser (HA)
+)) ("C:\Users\joona\AppData\Local\Programs\MiKTeX 2.9\tex/latex/adjustbox\adjcalc.sty"
+Package: adjcalc 2012/05/16 v1.1 Provides advanced setlength with multiple back-ends (calc, etex, pgfmath)
+) ("C:\Users\joona\AppData\Local\Programs\MiKTeX 2.9\tex/latex/adjustbox\trimclip.sty"
+Package: trimclip 2020/08/19 v1.2 Trim and clip general TeX material
+ ("C:\Users\joona\AppData\Local\Programs\MiKTeX 2.9\tex/latex/collectbox\collectbox.sty"
+Package: collectbox 2012/05/17 v0.4b Collect macro arguments as boxes
+\collectedbox=\box53
+)
+\tc@llx=\dimen180
+\tc@lly=\dimen181
+\tc@urx=\dimen182
+\tc@ury=\dimen183
+Package trimclip Info: Using driver 'tc-pdftex.def'.
+ ("C:\Users\joona\AppData\Local\Programs\MiKTeX 2.9\tex/latex/adjustbox\tc-pdftex.def"
+File: tc-pdftex.def 2019/01/04 v2.2 Clipping driver for pdftex
+))
+\adjbox@Width=\dimen184
+\adjbox@Height=\dimen185
+\adjbox@Depth=\dimen186
+\adjbox@Totalheight=\dimen187
+\adjbox@pwidth=\dimen188
+\adjbox@pheight=\dimen189
+\adjbox@pdepth=\dimen190
+\adjbox@ptotalheight=\dimen191
+ ("C:\Users\joona\AppData\Local\Programs\MiKTeX 2.9\tex/latex/ifoddpage\ifoddpage.sty"
+Package: ifoddpage 2016/04/23 v1.1 Conditionals for odd/even page detection
+\c@checkoddpage=\count281
+) ("C:\Users\joona\AppData\Local\Programs\MiKTeX 2.9\tex/latex/varwidth\varwidth.sty"
+Package: varwidth 2009/03/30 ver 0.92;  Variable-width minipages
+\@vwid@box=\box54
+\sift@deathcycles=\count282
+\@vwid@loff=\dimen192
+\@vwid@roff=\dimen193
+))) ("C:\Users\joona\AppData\Local\Programs\MiKTeX 2.9\tex/latex/biblatex\biblatex.sty"
+Package: biblatex 2020/12/31 v3.16 programmable bibliographies (PK/MW)
+ ("C:\Users\joona\AppData\Local\Programs\MiKTeX 2.9\tex/generic/pdftexcmds\pdftexcmds.sty"
+Package: pdftexcmds 2020-06-27 v0.33 Utility functions of pdfTeX for LuaTeX (HO)
+ ("C:\Users\joona\AppData\Local\Programs\MiKTeX 2.9\tex/generic/infwarerr\infwarerr.sty"
+Package: infwarerr 2019/12/03 v1.5 Providing info/warning/error messages (HO)
+) ("C:\Users\joona\AppData\Local\Programs\MiKTeX 2.9\tex/generic/ltxcmds\ltxcmds.sty"
+Package: ltxcmds 2020-05-10 v1.25 LaTeX kernel commands for general use (HO)
+)
+Package pdftexcmds Info: \pdf@primitive is available.
+Package pdftexcmds Info: \pdf@ifprimitive is available.
+Package pdftexcmds Info: \pdfdraftmode found.
+) ("C:\Users\joona\AppData\Local\Programs\MiKTeX 2.9\tex/latex/kvoptions\kvoptions.sty"
+Package: kvoptions 2020-10-07 v3.14 Key value format for package options (HO)
+ ("C:\Users\joona\AppData\Local\Programs\MiKTeX 2.9\tex/generic/kvsetkeys\kvsetkeys.sty"
+Package: kvsetkeys 2019/12/15 v1.18 Key value parser (HO)
+)) ("C:\Users\joona\AppData\Local\Programs\MiKTeX 2.9\tex/latex/logreq\logreq.sty"
+Package: logreq 2010/08/04 v1.0 xml request logger
+\lrq@indent=\count283
+ ("C:\Users\joona\AppData\Local\Programs\MiKTeX 2.9\tex/latex/logreq\logreq.def"
+File: logreq.def 2010/08/04 v1.0 logreq spec v1.0
+)) ("C:\Users\joona\AppData\Local\Programs\MiKTeX 2.9\tex/latex/url\url.sty"
+\Urlmuskip=\muskip17
+Package: url 2013/09/16  ver 3.4  Verb mode for urls, etc.
+)
+\c@tabx@nest=\count284
+\c@listtotal=\count285
+\c@listcount=\count286
+\c@liststart=\count287
+\c@liststop=\count288
+\c@citecount=\count289
+\c@citetotal=\count290
+\c@multicitecount=\count291
+\c@multicitetotal=\count292
+\c@instcount=\count293
+\c@maxnames=\count294
+\c@minnames=\count295
+\c@maxitems=\count296
+\c@minitems=\count297
+\c@citecounter=\count298
+\c@maxcitecounter=\count299
+\c@savedcitecounter=\count300
+\c@uniquelist=\count301
+\c@uniquename=\count302
+\c@refsection=\count303
+\c@refsegment=\count304
+\c@maxextratitle=\count305
+\c@maxextratitleyear=\count306
+\c@maxextraname=\count307
+\c@maxextradate=\count308
+\c@maxextraalpha=\count309
+\c@abbrvpenalty=\count310
+\c@highnamepenalty=\count311
+\c@lownamepenalty=\count312
+\c@maxparens=\count313
+\c@parenlevel=\count314
+\blx@tempcnta=\count315
+\blx@tempcntb=\count316
+\blx@tempcntc=\count317
+\blx@maxsection=\count318
+\blx@maxsegment@0=\count319
+\blx@notetype=\count320
+\blx@parenlevel@text=\count321
+\blx@parenlevel@foot=\count322
+\blx@sectionciteorder@0=\count323
+\blx@entrysetcounter=\count324
+\blx@biblioinstance=\count325
+\labelnumberwidth=\skip57
+\labelalphawidth=\skip58
+\biblabelsep=\skip59
+\bibitemsep=\skip60
+\bibnamesep=\skip61
+\bibinitsep=\skip62
+\bibparsep=\skip63
+\bibhang=\skip64
+\blx@bcfin=\read3
+\blx@bcfout=\write3
+\blx@langwohyphens=\language84
+\c@mincomprange=\count326
+\c@maxcomprange=\count327
+\c@mincompwidth=\count328
+Package biblatex Info: Trying to load biblatex default data model...
+Package biblatex Info: ... file 'blx-dm.def' found.
+ ("C:\Users\joona\AppData\Local\Programs\MiKTeX 2.9\tex/latex/biblatex\blx-dm.def"
+File: blx-dm.def 2020/12/31 v3.16 biblatex localization (PK/MW)
+)
+Package biblatex Info: Trying to load biblatex style data model...
+Package biblatex Info: ... file 'authoryear.dbx' not found.
+Package biblatex Info: Trying to load biblatex custom data model...
+Package biblatex Info: ... file 'biblatex-dm.cfg' not found.
+\c@afterword=\count329
+\c@savedafterword=\count330
+\c@annotator=\count331
+\c@savedannotator=\count332
+\c@author=\count333
+\c@savedauthor=\count334
+\c@bookauthor=\count335
+\c@savedbookauthor=\count336
+\c@commentator=\count337
+\c@savedcommentator=\count338
+\c@editor=\count339
+\c@savededitor=\count340
+\c@editora=\count341
+\c@savededitora=\count342
+\c@editorb=\count343
+\c@savededitorb=\count344
+\c@editorc=\count345
+\c@savededitorc=\count346
+\c@foreword=\count347
+\c@savedforeword=\count348
+\c@holder=\count349
+\c@savedholder=\count350
+\c@introduction=\count351
+\c@savedintroduction=\count352
+\c@namea=\count353
+\c@savednamea=\count354
+\c@nameb=\count355
+\c@savednameb=\count356
+\c@namec=\count357
+\c@savednamec=\count358
+\c@translator=\count359
+\c@savedtranslator=\count360
+\c@shortauthor=\count361
+\c@savedshortauthor=\count362
+\c@shorteditor=\count363
+\c@savedshorteditor=\count364
+\c@labelname=\count365
+\c@savedlabelname=\count366
+\c@institution=\count367
+\c@savedinstitution=\count368
+\c@lista=\count369
+\c@savedlista=\count370
+\c@listb=\count371
+\c@savedlistb=\count372
+\c@listc=\count373
+\c@savedlistc=\count374
+\c@listd=\count375
+\c@savedlistd=\count376
+\c@liste=\count377
+\c@savedliste=\count378
+\c@listf=\count379
+\c@savedlistf=\count380
+\c@location=\count381
+\c@savedlocation=\count382
+\c@organization=\count383
+\c@savedorganization=\count384
+\c@origlocation=\count385
+\c@savedoriglocation=\count386
+\c@origpublisher=\count387
+\c@savedorigpublisher=\count388
+\c@publisher=\count389
+\c@savedpublisher=\count390
+\c@language=\count391
+\c@savedlanguage=\count392
+\c@origlanguage=\count393
+\c@savedoriglanguage=\count394
+\c@pageref=\count395
+\c@savedpageref=\count396
+\shorthandwidth=\skip65
+\shortjournalwidth=\skip66
+\shortserieswidth=\skip67
+\shorttitlewidth=\skip68
+\shortauthorwidth=\skip69
+\shorteditorwidth=\skip70
+\locallabelnumberwidth=\skip71
+\locallabelalphawidth=\skip72
+\localshorthandwidth=\skip73
+\localshortjournalwidth=\skip74
+\localshortserieswidth=\skip75
+\localshorttitlewidth=\skip76
+\localshortauthorwidth=\skip77
+\localshorteditorwidth=\skip78
+Package biblatex Info: Trying to load compatibility code...
+Package biblatex Info: ... file 'blx-compat.def' found.
+ ("C:\Users\joona\AppData\Local\Programs\MiKTeX 2.9\tex/latex/biblatex\blx-compat.def"
+File: blx-compat.def 2020/12/31 v3.16 biblatex compatibility (PK/MW)
+)
+Package biblatex Info: Trying to load BibTeX backend compatibility...
+Package biblatex Info: ... file 'blx-bibtex.def' found.
+ ("C:\Users\joona\AppData\Local\Programs\MiKTeX 2.9\tex/latex/biblatex\blx-bibtex.def"
+File: blx-bibtex.def 2020/12/31 v3.16 biblatex compatibility (PK/MW)
+
+
+Package biblatex Warning: Using fall-back BibTeX(8) backend:
+(biblatex)                functionality may be reduced/unavailable.
+
+)
+Package biblatex Info: Trying to load generic definitions...
+Package biblatex Info: ... file 'biblatex.def' found.
+ ("C:\Users\joona\AppData\Local\Programs\MiKTeX 2.9\tex/latex/biblatex\biblatex.def"
+File: biblatex.def 2020/12/31 v3.16 biblatex compatibility (PK/MW)
+\c@textcitecount=\count397
+\c@textcitetotal=\count398
+\c@textcitemaxnames=\count399
+\c@biburlbigbreakpenalty=\count400
+\c@biburlbreakpenalty=\count401
+\c@biburlnumpenalty=\count402
+\c@biburlucpenalty=\count403
+\c@biburllcpenalty=\count404
+\biburlbigskip=\muskip18
+\biburlnumskip=\muskip19
+\biburlucskip=\muskip20
+\biburllcskip=\muskip21
+\c@smartand=\count405
+)
+Package biblatex Info: Trying to load natbib compatibility...
+Package biblatex Info: ... file 'blx-natbib.def' found.
+ ("C:\Users\joona\AppData\Local\Programs\MiKTeX 2.9\tex/latex/biblatex\blx-natbib.def"
+File: blx-natbib.def 2020/12/31 v3.16 biblatex compatibility (PK/MW)
+Package biblatex Info: Delimiter 'nameyeardelim' in context '' already defined, overwriting.
+)
+Package biblatex Info: Trying to load bibliography style 'authoryear'...
+Package biblatex Info: ... file 'authoryear.bbx' found.
+ ("C:\Users\joona\AppData\Local\Programs\MiKTeX 2.9\tex/latex/biblatex/bbx\authoryear.bbx"
+File: authoryear.bbx 2020/12/31 v3.16 biblatex bibliography style (PK/MW)
+Package biblatex Info: Trying to load bibliography style 'standard'...
+Package biblatex Info: ... file 'standard.bbx' found.
+ ("C:\Users\joona\AppData\Local\Programs\MiKTeX 2.9\tex/latex/biblatex/bbx\standard.bbx"
+File: standard.bbx 2020/12/31 v3.16 biblatex bibliography style (PK/MW)
+\c@bbx:relatedcount=\count406
+\c@bbx:relatedtotal=\count407
+))
+Package biblatex Info: Trying to load citation style 'authoryear'...
+Package biblatex Info: ... file 'authoryear.cbx' found.
+ ("C:\Users\joona\AppData\Local\Programs\MiKTeX 2.9\tex/latex/biblatex/cbx\authoryear.cbx"
+File: authoryear.cbx 2020/12/31 v3.16 biblatex citation style (PK/MW)
+Package biblatex Info: Redefining '\cite'.
+Package biblatex Info: Redefining '\parencite'.
+Package biblatex Info: Redefining '\footcite'.
+Package biblatex Info: Redefining '\footcitetext'.
+Package biblatex Info: Redefining '\smartcite'.
+Package biblatex Info: Redefining '\textcite'.
+Package biblatex Info: Redefining '\textcites'.
+)
+Package biblatex Info: Trying to load configuration file...
+Package biblatex Info: ... file 'biblatex.cfg' found.
+ ("C:\Users\joona\AppData\Local\Programs\MiKTeX 2.9\tex/latex/biblatex\biblatex.cfg"
+File: biblatex.cfg 
+))
+Package csquotes Info: Checking for multilingual support...
+Package csquotes Info: ... found 'babel' package.
+Package csquotes Info: Adjusting default style.
+Package csquotes Info: Redefining alias 'default' -> 'english'.
+ ("C:\Users\joona\AppData\Local\Programs\MiKTeX 2.9\tex/latex/l3backend\l3backend-pdftex.def"
+File: l3backend-pdftex.def 2020-01-29 L3 backend support: PDF output (pdfTeX)
+\l__color_backend_stack_int=\count408
+\l__pdf_internal_box=\box55
+) ("c:/Users\joona\Documents\koulu\Aalto\ELEC-E5510 - Speech Recognition D\Literature Study\build\build.aux")
+\openout1 = `build\build.aux'.
+
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 11.
+LaTeX Font Info:    ... okay on input line 11.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 11.
+LaTeX Font Info:    ... okay on input line 11.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 11.
+LaTeX Font Info:    ... okay on input line 11.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 11.
+LaTeX Font Info:    ... okay on input line 11.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 11.
+LaTeX Font Info:    ... okay on input line 11.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 11.
+LaTeX Font Info:    ... okay on input line 11.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 11.
+LaTeX Font Info:    ... okay on input line 11.
+ ("C:\Users\joona\AppData\Local\Programs\MiKTeX 2.9\tex/context/base/mkii\supp-pdf.mkii"
+[Loading MPS to PDF converter (version 2006.09.02).]
+\scratchcounter=\count409
+\scratchdimen=\dimen194
+\scratchbox=\box56
+\nofMPsegments=\count410
+\nofMParguments=\count411
+\everyMPshowfont=\toks31
+\MPscratchCnt=\count412
+\MPscratchDim=\dimen195
+\MPnumerator=\count413
+\makeMPintoPDFobject=\count414
+\everyMPtoPDFconversion=\toks32
+) ("C:\Users\joona\AppData\Local\Programs\MiKTeX 2.9\tex/latex/epstopdf-pkg\epstopdf-base.sty"
+Package: epstopdf-base 2020-01-24 v2.11 Base part for package epstopdf
+ ("C:\Users\joona\AppData\Local\Programs\MiKTeX 2.9\tex/latex/grfext\grfext.sty"
+Package: grfext 2019/12/03 v1.3 Manage graphics extensions (HO)
+ ("C:\Users\joona\AppData\Local\Programs\MiKTeX 2.9\tex/generic/kvdefinekeys\kvdefinekeys.sty"
+Package: kvdefinekeys 2019-12-19 v1.6 Define keys (HO)
+))
+Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 485.
+Package grfext Info: Graphics extension search list:
+(grfext)             [.pdf,.png,.jpg,.mps,.jpeg,.jbig2,.jb2,.PDF,.PNG,.JPG,.JPEG,.JBIG2,.JB2,.eps]
+(grfext)             \AppendGraphicsExtensions on input line 504.
+)
+Package caption Info: Begin \AtBeginDocument code.
+Package caption Info: End \AtBeginDocument code.
+
+*geometry* driver: auto-detecting
+*geometry* detected driver: pdftex
+*geometry* verbose mode - [ preamble ] result:
+* driver: pdftex
+* paper: <default>
+* layout: <same size as paper>
+* layoutoffset:(h,v)=(0.0pt,0.0pt)
+* modes: 
+* h-part:(L,W,R)=(92.14519pt, 430.00462pt, 92.14519pt)
+* v-part:(T,H,B)=(95.39737pt, 556.47656pt, 143.09605pt)
+* \paperwidth=614.295pt
+* \paperheight=794.96999pt
+* \textwidth=430.00462pt
+* \textheight=556.47656pt
+* \oddsidemargin=19.8752pt
+* \evensidemargin=19.8752pt
+* \topmargin=-13.87262pt
+* \headheight=12.0pt
+* \headsep=25.0pt
+* \topskip=10.0pt
+* \footskip=30.0pt
+* \marginparwidth=65.0pt
+* \marginparsep=11.0pt
+* \columnsep=10.0pt
+* \skip\footins=9.0pt plus 4.0pt minus 2.0pt
+* \hoffset=0.0pt
+* \voffset=0.0pt
+* \mag=1000
+* \@twocolumnfalse
+* \@twosidefalse
+* \@mparswitchfalse
+* \@reversemarginfalse
+* (1in=72.27pt=25.4mm, 1cm=28.453pt)
+
+Package biblatex Info: Trying to load language 'english'...
+Package biblatex Info: ... file 'english.lbx' found.
+("C:\Users\joona\AppData\Local\Programs\MiKTeX 2.9\tex/latex/biblatex/lbx\english.lbx"
+File: english.lbx 2020/12/31 v3.16 biblatex localization (PK/MW)
+)
+Package biblatex Info: Input encoding 'utf8' detected.
+Package biblatex Info: Automatic encoding selection.
+(biblatex)             Assuming data encoding 'utf8'.
+Package biblatex Info: Input encoding 'utf8' specified.
+Package biblatex Info: Data encoding 'utf8' specified.
+(biblatex)             No need to reencode data.
+Package biblatex Info: Document encoding is UTF8 ....
+ ("C:\Users\joona\AppData\Local\Programs\MiKTeX 2.9\tex/latex/l3kernel\expl3.sty"
+Package: expl3 2021-01-09 L3 programming layer (loader) 
+)
+Package biblatex Info: ... and expl3
+(biblatex)             2021-01-09 L3 programming layer (loader) 
+(biblatex)             is new enough (at least 2020/04/06),
+(biblatex)             setting 'casechanger=expl3'.
+ ("C:\Users\joona\AppData\Local\Programs\MiKTeX 2.9\tex/latex/biblatex\blx-case-expl3.sty" ("C:\Users\joona\AppData\Local\Programs\MiKTeX 2.9\tex/latex/l3packages/xparse\xparse.sty"
+Package: xparse 2020-10-27 L3 Experimental document command parser
+ ("C:\Users\joona\AppData\Local\Programs\MiKTeX 2.9\tex/latex/l3packages/xparse\xparse-generic.tex"))
+Package: blx-case-expl3 2020/12/31 v3.16 expl3 case changing code for biblatex
+)
+\openout3 = `build\build-blx.bib'.
+
+Package biblatex Info: Trying to load bibliographic data...
+Package biblatex Info: ... file 'build\build.bbl' found.
+ ("c:/Users\joona\Documents\koulu\Aalto\ELEC-E5510 - Speech Recognition D\Literature Study\build\build.bbl")
+Package biblatex Info: Reference section=0 on input line 11.
+Package biblatex Info: Reference segment=0 on input line 11.
+LaTeX Font Info:    Trying to load font information for U+msa on input line 22.
+ ("C:\Users\joona\AppData\Local\Programs\MiKTeX 2.9\tex/latex/amsfonts\umsa.fd"
+File: umsa.fd 2013/01/14 v3.01 AMS symbols A
+)
+LaTeX Font Info:    Trying to load font information for U+msb on input line 22.
+ ("C:\Users\joona\AppData\Local\Programs\MiKTeX 2.9\tex/latex/amsfonts\umsb.fd"
+File: umsb.fd 2013/01/14 v3.01 AMS symbols B
+) ("c:/Users\joona\Documents\koulu\Aalto\ELEC-E5510 - Speech Recognition D\Literature Study\build\build.toc")
+\tf@toc=\write4
+\openout4 = `build\build.toc'.
+
+ [1
+
+{C:/Users/joona/AppData/Local/MiKTeX/2.9/pdftex/config/pdftex.map}] [2
+
+] [3] [4]
+LaTeX Font Info:    Trying to load font information for T1+cmtt on input line 81.
+ ("C:\Users\joona\AppData\Local\Programs\MiKTeX 2.9\tex/latex/base\t1cmtt.fd"
+File: t1cmtt.fd 2019/12/16 v2.5j Standard LaTeX font definitions
+) [5
+
+] ("c:/Users\joona\Documents\koulu\Aalto\ELEC-E5510 - Speech Recognition D\Literature Study\build\build.aux")
+Package logreq Info: Writing requests to 'build\build.run.xml'.
+\openout1 = `build\build.run.xml'.
+
+ ) 
+Here is how much of TeX's memory you used:
+ 15473 strings out of 479584
+ 275551 string characters out of 2861494
+ 954373 words of memory out of 3000000
+ 32425 multiletter control sequences out of 15000+200000
+ 416836 words of font info for 63 fonts, out of 3000000 for 9000
+ 1141 hyphenation exceptions out of 8191
+ 73i,6n,78p,1939b,1698s stack positions out of 5000i,500n,10000p,200000b,50000s
+ <C:\Users\joona\AppData\Local\MiKTeX\2.9\fonts/pk/ljfour/jknappen/ec/dpi600\ectt1000.pk> <C:\Users\joona\AppData\Local\MiKTeX\2.9\fonts/pk/ljfour/jknappen/ec/dpi600\eccc1000.pk> <C:\Users\joona\AppData\Local\MiKTeX\2.9\fonts/pk/ljfour/jknappen/ec/dpi600\ecti1000.pk> <C:\Users\joona\AppData\Local\MiKTeX\2.9\fonts/pk/ljfour/jknappen/ec/dpi600\ecbx1200.pk> <C:\Users\joona\AppData\Local\MiKTeX\2.9\fonts/pk/ljfour/jknappen/ec/dpi600\ecrm1000.pk> <C:\Users\joona\AppData\Local\MiKTeX\2.9\fonts/pk/ljfour/jknappen/ec/dpi600\ecbx1000.pk> <C:\Users\joona\AppData\Local\MiKTeX\2.9\fonts/pk/ljfour/jknappen/ec/dpi600\ecbx1440.pk> <C:\Users\joona\AppData\Local\MiKTeX\2.9\fonts/pk/ljfour/jknappen/ec/dpi600\ecrm1200.pk> <C:\Users\joona\AppData\Local\MiKTeX\2.9\fonts/pk/ljfour/jknappen/ec/dpi600\ecrm1728.pk>
+Output written on "c:/Users\joona\Documents\koulu\Aalto\ELEC-E5510 - Speech Recognition D\Literature Study\build\build.pdf" (5 pages, 109971 bytes).
+PDF statistics:
+ 342 PDF objects out of 1000 (max. 8388607)
+ 0 named destinations out of 1000 (max. 500000)
+ 1 words of extra memory for PDF output out of 10000 (max. 10000000)
+

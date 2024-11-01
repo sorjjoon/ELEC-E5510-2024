@@ -1,0 +1,83 @@
+% Note, shrunk font-size
+\documentclass[10pt, english]{article}
+
+\input{preamble.tex}
+
+%
+\usepackage[backend=bibtex ,style=authoryear, citestyle=authoryear, natbib]{biblatex}
+\addbibresource{source.bib}
+
+
+\begin{document}
+\title{ELEC-E5510 - Literature Study}
+\author{
+    Hung Nguyen \\
+    Joona Sorjonen \\
+}
+%\date{\today}
+\date{
+    % \today
+}
+
+\maketitle
+
+\tableofcontents
+\clearpage
+
+
+\section{What is the topic?}
+The topic is a speech recognition task using data derived from the Common Voice Corpus, but it has been modified to introduce "gibberish" by making random character changes based on a predefined list. This modified dataset, called "GEO data (Gibberish EsperantO)," consists of increasing degrees of character manipulation.
+The goal is to develop a robust model that can recognize phonemes even when character alterations are introduced, which can help evaluate model robustness in this recognition task even when facing poisoned data.
+
+
+\section{Why is it a problem?}
+When phonemes or characters are randomly modified, ASR models are more likely to face ambiguity because they can no longer rely on the predictable speech structure. This is a type of adversarial training - exposing the model to perturbed data during training for stronger robustness. If a model is trained on inputs where phonemes or characters are randomly altered, it can learn to model speech independently. For instance, by training on "gibberish" Esperanto phrases with altered phonemes, the model is “pushed” to develop an understanding of phonetic patterns, rather than rely on sequential dependencies in speech to infer.
+
+Without this robustness, models may fail in practical scenarios with unpredictable noise or phonetic variation, which is a very practical problem. In summary, the goal of this task is to solve this problem by reducing overfitting to “clean” training data and instead encouraging it to learn generalized features of phoneme patterns.
+
+
+
+\section{What are the methods used in this problem?}
+
+To address the challenges in speech recognition, recent literature \citep{sym11081018, PrabhavalkarEnd-to-End2024} highlights the following main methodologies:
+
+\subsection{Traditional HMM-based Approaches}
+HMM model speech using a set of states, each corresponds to a probability distribution over the observed features, transition probabilities control the movement between states, capturing temporal dynamics of speech.
+In terms of architecture, HMM-based models often rely on three different components, the acoustic model which maps speech input to a feature sequence, the pronunciation model which is dictionary mapping various levels of pronunciation, and the language model which maps sequences of characters to coherent transcriptions \citep{sym11081018}. While this modularity allows for flexibility, it complicates the training process since each component is typically trained independently. In contrast, end-to-end (E2E) (completely neural ASR) models, which are the modern modeling approaches, directly map the input audio to the output text without the need for additional modeling systems \citep{sym11081018, PrabhavalkarEnd-to-End2024}.
+
+\subsection{Explicit Alignment E2E Approaches}
+This family of approaches model alignments between the encoder output and the target sequence explicitly through a latent variable \citep{PrabhavalkarEnd-to-End2024}. They often have predefined rules or structures (alignment schemas) that dictate how the input and output relate to each other.
+
+These are some of the highlighted approaches:
+
+
+\subsubsection{Connectionist Temporal Classification (CTC)}
+CTC \citep{GravesCTC2006} aligns the input sequence with the output sequence by generating multiple valid alignments, then computes the probability of the output by summing over these alignments. A key component in this process is the use of blank tokens, which act as placeholders allowing the model to "pause" on certain frames without generating an output character. This enables CTC to handle varying sequence lengths.
+
+% Individual entries are indicated with a black dot, a so-called bullet. The text in the entries may be of any length.
+
+In terms of architecture, CTC utilizes encoder, often a DNN \citep{PrabhavalkarEnd-to-End2024}, to process the input and map it into a sequence of encoded representations \citep{GravesCTC2006}. Each frame of this encoded sequence is passed through a softmax layer that outputs probabilities over the possible labels and blank tokens. CTC then marginalizes over all possible alignments to calculate the probability of the correct output sequence given the input \citep{GravesCTC2006}.
+
+\subsubsection{Recurrent Neural Network Transducer (RNN-T)}
+RNN-T \citep{graves2012sequencetransductionrecurrentneural, graves2013deeprecurrentneuralnetworks} improves on the CTC by relaxing some of its independence assumptions \citep{PrabhavalkarEnd-to-End2024}. Similarly, RNN-T uses a blank token to handle frame transitions without outputting a new label. However, RNN-T can produce multiple labels in a sequence between two blanks, unlike CTC, which only allows a single label per frame, allowing greater flexibility \citep{graves2012sequencetransductionrecurrentneural}.
+In terms of architecture, RNN-T consists of three parts: an encoder, a prediction network, and a joint network \citep{graves2012sequencetransductionrecurrentneural}. The encoder converts input speech frames into high-level features. The prediction network models previous non-blank output. The joint network combines the encoder and prediction outputs to determine the next symbol.
+
+
+\subsubsection{Recurrent Neural Aligner (RNA)}
+RNA \citep{sak17_interspeech} is another generalization of CTT, without an assumption of independence between consecutive tokens. Instead, the previous token is passed as an additional input to the model when calculating the probability of a new token. Like previous approaches, RNA defines a probability distribution over blank-augmented labels, allowing it to output either a blank or non-blank label at each frame. % However, RNA only produces a single instance of each non-blank label, enhancing computational efficiency and simplifying the decoding process.
+
+In RNA, valid alignments consist of sequences with a specific number of blank symbols and match the target labels after removing blanks. The model’s posterior probability is computed over these alignments, considering both the previously emitted labels and the frames they correspond to \citep{graves2012sequencetransductionrecurrentneural}. This dual conditioning, unlike in RNN-T, allows RNA to better capture the dependencies between output labels and their timing \citep{PrabhavalkarEnd-to-End2024}.
+
+
+
+\subsection{Implicit Alignment E2E Approaches}
+A major benefit of the previously looked at explicit methods, is that the encoder can operate using only the previously inputted frames to generate encoded frames. This allows the encoder to be used in a streaming manner i.e process data as it is inputted to the model, without the need to have the full data available beforehand \citep{PrabhavalkarEnd-to-End2024}.
+In applications, where this type of functionality is not required, Attention-based Encoder-Decoder (AED) \citep{NIPS2015_1068c6e4} models can be used. Unlike explicit alignment methods, which produce output until the final frame is reached, AED models process the entire input sequence at once \citep{NIPS2015_1068c6e4}. The model does not hold an explicit alignment in the models internal state, instead this alignment is held implicitly with regards to the input sequence, neural network internal state and the model attention weights. A softmax layer is finally used to output probabl for potential outputs.
+
+This approach allows AED models compute the conditional probability of the output sequence without making any assumptions of independence between the input acoustics and model outputs (unlike previous models) \citep{PrabhavalkarEnd-to-End2024}.
+
+
+\clearpage
+\printbibliography
+
+\end{document}

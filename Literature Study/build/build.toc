@@ -1,0 +1,20 @@
+\boolfalse {citerequest}\boolfalse {citetracker}\boolfalse {pagetracker}\boolfalse {backtracker}\relax 
+\babel@toc {english}{}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {1}What is the topic?}{2}{}%
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {2}Why is it a problem?}{2}{}%
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {3}What are the methods used in this problem?}{2}{}%
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {3.1}Traditional HMM-based Approaches}{2}{}%
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {3.2}Explicit Alignment E2E Approaches}{2}{}%
+\defcounter {refsection}{0}\relax 
+\contentsline {subsubsection}{\numberline {3.2.1}Connectionist Temporal Classification (CTC)}{3}{}%
+\defcounter {refsection}{0}\relax 
+\contentsline {subsubsection}{\numberline {3.2.2}Recurrent Neural Network Transducer (RNN-T)}{3}{}%
+\defcounter {refsection}{0}\relax 
+\contentsline {subsubsection}{\numberline {3.2.3}Recurrent Neural Aligner (RNA)}{3}{}%
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {3.3}Implicit Alignment E2E Approaches}{3}{}%
