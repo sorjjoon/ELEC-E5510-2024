@@ -1,8 +1,7 @@
 import torch
-from torch import nn
 
 
-class YourSpeechRecognitionModel(nn.Module):
+class YourSpeechRecognitionModel(torch.nn.Module):
     def __init__(self):
         super().__init__()
 
