@@ -1,5 +1,6 @@
 torch
 torchaudio
+torchmetrics
 scipy
 pandas
 ipykernel 
