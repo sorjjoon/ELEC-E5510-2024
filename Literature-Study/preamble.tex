@@ -28,28 +28,6 @@
 \usepackage{cases}
 \usepackage{array}
 \usepackage{adjustbox}
-\newcommand{\Sx}{\begin{pmatrix}0 & -i \\i & 0 \end{pmatrix}}
-\newcommand{\unit}{\mathbb{1}}
-\newcommand{\hper}{\frac{\hslash}{2}}
-\newcommand{\R}{\mathbb{R}}
-\newcommand{\C}{\mathbb{C}}
-\newcommand{\N}{\mathbb{N}}
-\newcommand{\Q}{\mathbb{Q}}
-\newcommand{\sqrtper}{\frac{1}{\sqrt{2}}}
-\newcommand{\spinup}{\ket{\uparrow}}
-\newcommand{\spindown}{\ket{\downarrow}}
 %aliasing citep to parencite
 %\newcommand{\citep}{\parencite}
 
-%padding
-\newcommand\T{\rule{0pt}{2.6ex}}       % Top strut
-\newcommand\B{\rule[-1.2ex]{0pt}{0pt}} % Bottom strut
-
-
-%ssref
-\makeatletter
-\def\@firstoftwo@third#1#2{%
-  \def\temp##1.##2.##3\@nil{##3}%
-  \temp#1\@nil}
-\newcommand\ssref[1]{\expandafter\@setref\csname r@#1\endcsname\@firstoftwo@third{#1}}
-\makeatother
