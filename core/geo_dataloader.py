@@ -77,7 +77,7 @@ def collate_fn(itemlist):
     feature_dim = itemlist[0][0].shape[1]
     feature_batch = torch.zeros(len(itemlist), max_feature_length, feature_dim)  
 
-    # max_transcript_length = max(transcript_id.shape[0] for _, transcript_id in itemlist)
+    # max_transcript_length = max(transcript_id.shape[0] for _, transcript_id, _ in itemlist)
     # transcript_id_batch = torch.zeros(len(itemlist), max_transcript_length)  
     transcript_id_batch = []
     transcript_batch = []
@@ -89,9 +89,11 @@ def collate_fn(itemlist):
         feature_batch[i, :feature.shape[0], :] = feature 
         # transcript_id_batch[i, :transcript_id.shape[0]] = transcript_id 
         transcript_id_batch.append(transcript_id)
-        transcript_batch.append(transcript)
-        input_lengths[i] = feature.shape[0]
+        
+        input_lengths[i] = feature.shape[0] // 2
         target_lengths[i] = transcript_id.shape[0]
+
+        transcript_batch.append(transcript)
 
     transcript_id_batch = torch.cat(transcript_id_batch)
 

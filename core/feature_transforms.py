@@ -7,16 +7,20 @@ class LogMelSpec(nn.Module):
     def __init__(
         self, 
         sample_rate=16000, 
-        n_mels=128, 
+        n_mels=40, 
+        win_length=400, 
+        hop_length=160, 
         n_fft=512
     ):
         super().__init__()
         self.transform = transforms.MelSpectrogram(
                             sample_rate=sample_rate, 
+                            win_length=win_length,
+                            hop_length=hop_length,
                             n_mels=n_mels, 
                             n_fft=n_fft,
                             window_fn=torch.hann_window,
-                            normalized=True,
+                            # normalized=True,
                         )
     def forward(self, x):
         x = self.transform(x)
@@ -40,7 +44,6 @@ class MFCC(nn.Module):
                         )
     def forward(self, x):
         x = self.transform(x)
-        x = torch.log(x + 1e-8)  # logarithmic, add small value to avoid inf
         x = x.transpose(1, 2)
         return x
 
