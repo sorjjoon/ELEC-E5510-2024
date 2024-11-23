@@ -3,6 +3,7 @@ from torch import nn
 import torch.nn.functional as F
 
 
+
 class CNNLayerNorm(nn.Module):
     """Layer normalization built for cnns input"""
     def __init__(self, n_feats):
@@ -61,7 +62,7 @@ class BidirectionalGRU(nn.Module):
 
 
 class SpeechRecognitionModel(nn.Module):
-    def __init__(self, n_cnn_layers=3, n_rnn_layers=5, rnn_dim=256, n_class=30, n_feats=128, stride=2, dropout=0.1):
+    def __init__(self, n_cnn_layers=3, n_rnn_layers=5, rnn_dim=256, n_class=30, n_feats=128, stride=2, dropout=0.1, lm_scorer=None):
         super(SpeechRecognitionModel, self).__init__()
         n_feats = n_feats//2
         self.cnn = nn.Conv2d(1, 32, 3, stride=stride, padding=3//2)  # cnn for extracting heirachal features
@@ -85,6 +86,7 @@ class SpeechRecognitionModel(nn.Module):
             nn.Linear(rnn_dim, n_class),
             nn.LogSoftmax(dim=-1)
         )
+        self.lm_scorer = lm_scorer
 
     def forward(self, x):
         x = x.transpose(1, 2) # (batch, feature, time)
@@ -117,5 +119,20 @@ class SpeechRecognitionModel(nn.Module):
             unique_ids = [id for id in unique_ids if id != 0]
             decoded_text = "".join([vocab[id.item()] for id in unique_ids])
             decoded_texts.append(decoded_text)
+
+        if self.lm_scorer is not None:
+            # Sort based lm_scorer
+            scores = {}
+            for t in decoded_texts:
+               
+                if t not in scores:
+                    # FIXME, weight score based on acoustic model score
+                    lm_score = self.lm_scorer.score(t)
+                    scores[t] = lm_score
+            
+            sorted_text = sorted(decoded_texts, key= lambda x: scores[x], reverse=True)
+            print("Original", decoded_texts, "Rescored", sorted_text)
+            decoded_texts = sorted_text
+        
         return decoded_texts
         

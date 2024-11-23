@@ -9,6 +9,15 @@ from core.models.CTCDecoder import GreedyCTCDecoder
 from core.models.resnet_gru import SpeechRecognitionModel
 from core.geo_dataloader import GeoDataset, collate_fn, get_unique_characters
 from core.feature_transforms import LogMelSpec, Spectrogram, MFCC
+from core.models.LMScorer import KenlmLMScorer
+kenlm_enabled = False
+try:
+    import kenlm
+    kenlm_enabled = True
+except ImportError:
+    pass
+
+
 
 # %%
 transform = MFCC(n_mfcc=80)
@@ -25,6 +34,11 @@ print(vocab)
 # %%
 # model = SpeechRecognitionModel(n_feats=80, n_class=n_class)
 model = torch.load("checkpoints/run-2/model-epoch-50.pt")
+if kenlm_enabled:
+    print("Using kenlm scorer from kenlm/dev-4.arpa")
+    model.lm_scorer = KenlmLMScorer("kenlm/dev-4.arpa")
+else:
+    model.lm_scorer = None
 
 # %%
 epochs = 100
