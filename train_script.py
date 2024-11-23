@@ -9,7 +9,7 @@ from core.models.CTCDecoder import GreedyCTCDecoder
 from core.models.resnet_gru import SpeechRecognitionModel
 from core.geo_dataloader import GeoDataset, collate_fn, get_unique_characters
 from core.feature_transforms import LogMelSpec, Spectrogram, MFCC
-from core.models.LMScorer import KenlmLMScorer
+from core.models.LMScorer import KenlmLMScorer, RNNScorer
 kenlm_enabled = False
 try:
     import kenlm
@@ -39,6 +39,8 @@ if kenlm_enabled:
     model.lm_scorer = KenlmLMScorer("kenlm/dev-4.arpa")
 else:
     model.lm_scorer = None
+
+# model.lm_scorer = RNNScorer(torch.load("checkpoints/lm/run-1/model-epoch-2.pt", weights_only=False))
 
 # %%
 epochs = 100

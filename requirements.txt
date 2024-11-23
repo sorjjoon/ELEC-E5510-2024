@@ -7,3 +7,4 @@ ipykernel
 soundfile
 matplotlib
 https://github.com/kpu/kenlm/archive/master.zip
+tqdm
