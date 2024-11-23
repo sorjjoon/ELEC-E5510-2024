@@ -131,7 +131,6 @@ class SpeechRecognitionModel(nn.Module):
                     scores[t] = lm_score
             
             sorted_text = sorted(decoded_texts, key= lambda x: scores[x], reverse=True)
-            print("Original", decoded_texts, "Rescored", sorted_text)
             decoded_texts = sorted_text
         
         return decoded_texts
