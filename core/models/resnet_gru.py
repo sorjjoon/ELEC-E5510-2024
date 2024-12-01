@@ -62,7 +62,7 @@ class BidirectionalGRU(nn.Module):
 
 
 class SpeechRecognitionModel(nn.Module):
-    def __init__(self, n_cnn_layers=3, n_rnn_layers=5, rnn_dim=256, n_class=30, n_feats=128, stride=2, dropout=0.1, lm_scorer=None):
+    def __init__(self, n_cnn_layers=3, n_rnn_layers=5, rnn_dim=256, n_class=30, n_feats=128, stride=2, dropout=0.1, lm_scorer=None, acoustics_weight=0.7):
         super(SpeechRecognitionModel, self).__init__()
         n_feats = n_feats//2
         self.cnn = nn.Conv2d(1, 32, 3, stride=stride, padding=3//2)  # cnn for extracting heirachal features
@@ -111,6 +111,8 @@ class SpeechRecognitionModel(nn.Module):
             decoded_texts.append(decoded_text)
         return decoded_texts
     
+
+
     def greedy_decode_batch(self, logits, input_length, vocab):
         pred_ids = torch.argmax(logits, dim=-1)
         decoded_texts = []  
@@ -119,19 +121,58 @@ class SpeechRecognitionModel(nn.Module):
             unique_ids = [id for id in unique_ids if id != 0]
             decoded_text = "".join([vocab[id.item()] for id in unique_ids])
             decoded_texts.append(decoded_text)
+        return decoded_texts
 
-        if self.lm_scorer is not None:
-            # Sort based lm_scorer
-            scores = {}
-            for t in decoded_texts:
-               
-                if t not in scores:
-                    # FIXME, weight score based on acoustic model score
-                    lm_score = self.lm_scorer.score(t)
-                    scores[t] = lm_score
-            
-            sorted_text = sorted(decoded_texts, key= lambda x: scores[x], reverse=True)
-            decoded_texts = sorted_text
+    def score_decode_batch(self, logits, input_length, vocab, k = None, acoustic_weight = 0.7):
+        assert acoustic_weight > 0 and acoustic_weight <= 1
+        if self.lm_scorer is None or acoustic_weight == 1:
+            return self.greedy_decode_batch(logits, input_length, vocab)
+
+        if k is None:
+            # All
+            k = logits.shape[-1]
+
         
+
+        topk =  torch.topk(logits, k, dim=-1) 
+        topk_ids = topk.indices 
+        topk_scores = topk.values
+
+        decoded_texts = []
+        for i in range(logits.shape[0]): 
+            sequences = []
+            for j in range(k):
+                unique_ids = torch.unique_consecutive(topk_ids[i, :, j][-input_length[i]:])
+                unique_ids = [id for id in unique_ids if id != 0]
+
+                decoded_text = "".join([vocab[id.item()] for id in unique_ids])
+                
+                acoustic_score = acoustic_weight * topk_scores[i, :, j][-input_length[i]:].sum().item()
+                lm_score = (1 - acoustic_weight) * self.lm_scorer.score(decoded_text)
+
+
+                sequences.append((acoustic_score  +  lm_score , decoded_text))
+
+            # Sort based on score
+            sequences.sort(reverse=True)
+            sentence = sequences[0][1]
+            decoded_texts.append(sentence)
+
+
+        debug = True
+
+        if debug:
+            greedy = self.greedy_decode_batch(logits, input_length, vocab)
+            if greedy != self.greedy_decode_batch(logits, input_length, vocab):
+                print("Lm changed the results", greedy, "vs", decoded_texts)
+            else:
+                pass
+                #print("No change after lm score")
+
+
+        
+
+
+
         return decoded_texts
         
