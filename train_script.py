@@ -33,7 +33,7 @@ reverse_vocab = dataset.get_vocabulary(reverse=True)
 print(vocab)
 # %%
 # model = SpeechRecognitionModel(n_feats=80, n_class=n_class)
-model = torch.load("checkpoints/run-2/model-epoch-50.pt")
+model = torch.load("checkpoints/model-epoch-25.pt")
 if kenlm_enabled:
     print("Using kenlm scorer from kenlm/dev-4.arpa")
     model.lm_scorer = KenlmLMScorer("kenlm/dev-4.arpa")
@@ -49,11 +49,45 @@ metric = WordErrorRate()
 criterion = nn.CTCLoss(blank=0, zero_infinity=True)
 optimizer = torch.optim.Adam(model.parameters(), lr=1e-4)
 
-for epoch in range(epochs):
-    losses = []
-    wer = []
-    model.train()
-    for batch_id, batch in enumerate(dataloader):
+# for epoch in range(epochs):
+#     losses = []
+#     wer = []
+#     model.train()
+#     for batch_id, batch in enumerate(dataloader):
+#         features, transcript_ids, input_lengths, target_lengths, transcripts = batch
+
+#         logits = model(features)
+#         loss = criterion(logits.transpose(0, 1), transcript_ids, input_lengths, target_lengths)
+
+#         predicted_raw_text = model.decode_batch(logits, input_lengths, reverse_vocab)
+#         predicted_text = model.greedy_decode_batch(logits, input_lengths, reverse_vocab)
+#         batch_wer = metric([predicted_text[0]], [transcripts[0]])
+
+#         losses.append(loss.item())
+#         wer.append(batch_wer)
+
+#         optimizer.zero_grad()
+#         loss.backward()
+#         optimizer.step()
+        
+#         if (batch_id + 1) % 10 == 0:
+#             print(f"Batch {batch_id + 1}/{len(dataloader)}: Loss {losses[-1]} | WER: {wer[-1]}\n| Raw Predicted Word {[predicted_raw_text[0]]}\n| Decoded Predicted Word {[predicted_text[0]]}\n| Actual Word {[transcripts[0]]}\n")
+
+#     print(f"Epoch {epoch+1}/{epochs}: Average loss {sum(losses) / len(losses)} | Average WER {sum(wer) / len(wer)}")
+#     torch.save(model, f"checkpoints/run-3/model-epoch-{epoch+1}.pt")
+#     print("Model saved to checkpoints/\n")
+
+# %%
+test_dataset = GeoDataset(split="dev", transform_fn=transform)
+test_dataloader = DataLoader(dataset, batch_size=2, shuffle=True, collate_fn=collate_fn)
+
+predicted_text = []
+ground_truth_text = []
+losses = []
+wer = []
+model.eval()
+with torch.no_grad():
+    for batch_id, batch in enumerate(test_dataloader):
         features, transcript_ids, input_lengths, target_lengths, transcripts = batch
 
         logits = model(features)
@@ -65,35 +99,9 @@ for epoch in range(epochs):
 
         losses.append(loss.item())
         wer.append(batch_wer)
-
-        optimizer.zero_grad()
-        loss.backward()
-        optimizer.step()
         
-        if (batch_id + 1) % 10 == 0:
-            print(f"Batch {batch_id + 1}/{len(dataloader)}: Loss {losses[-1]} | WER: {wer[-1]}\n| Raw Predicted Word {[predicted_raw_text[0]]}\n| Decoded Predicted Word {[predicted_text[0]]}\n| Actual Word {[transcripts[0]]}\n")
-
-    print(f"Epoch {epoch+1}/{epochs}: Average loss {sum(losses) / len(losses)} | Average WER {sum(wer) / len(wer)}")
-    torch.save(model, f"checkpoints/run-3/model-epoch-{epoch+1}.pt")
-    print("Model saved to checkpoints/\n")
-
-# %%
-test_dataset = GeoDataset(split="dev", transform_fn=transform)
-test_dataloader = DataLoader(dataset, batch_size=2, shuffle=True, collate_fn=collate_fn)
-
-predicted_text = []
-ground_truth_text = []
-
-model.eval()
-with torch.no_grad():
-    for batch in test_dataloader:
-        features, transcript_ids, input_lengths, target_lengths, transcripts = batch
-        logits = model(features)
-        predicted_text += model.greedy_decode_batch(logits, input_lengths, reverse_vocab)
-        ground_truth_text += transcripts
-        print(predicted_text)
-        print(ground_truth_text)
-        break
+        print(f"Batch {batch_id + 1}/{len(dataloader)}: Loss {losses[-1]} | WER: {wer[-1]}\n| Raw Predicted Word {[predicted_raw_text[0]]}\n| Decoded Predicted Word {[predicted_text[0]]}\n| Actual Word {[transcripts[0]]}\n")
+            
 
 avg_wer = metric(predicted_text, ground_truth_text)
 # print(f"WER: {avg_wer}")

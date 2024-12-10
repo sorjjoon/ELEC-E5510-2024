@@ -12,7 +12,7 @@ from core.models.CTCDecoder import GreedyCTCDecoder
 from core.geo_dataloader import GeoDataset, collate_fn
 from core.models.RNN import LmRNN, T_UNKOWN, T_EOF, T_START
 import typing
-
+import os
 
 # %%
 # Load dataset and dataloader
@@ -135,23 +135,8 @@ for features, transcript_ids, transcript in tqdm(GeoDataset(split="dev", transfo
 
 
 # %%
-vocab_size = len(vocabulary)
-embedding_dim = 1024             # 400 in the paper
-hidden_dim = 1024                # 1150 in the paper
-num_layers = 2                   # 3 in the paper
-dropout_rate = 0.65
-tie_weights = True
-lr = 1e-3                        # They used 30 and a different optimizer
-batch_size = 3
 
-model = LmRNN(
-    vocab=vocabulary,
-    embedding_dim=embedding_dim, 
-    hidden_dim=hidden_dim, 
-    num_layers=num_layers, 
-    dropout_rate=dropout_rate, 
-    tie_weights=tie_weights)
-model.init_weights()
+
 
 # model:LmRNN = torch.load("checkpoints/lm/run-1/model-epoch-12.pt")
 
@@ -173,40 +158,87 @@ def get_data(documents, vocab: dict, batch_size):
     return data
 
 
-train_data = get_data(train_documents, vocabulary, batch_size)
-valid_data = get_data(validation_documents, vocabulary, batch_size)
+
+def eval_dir_models():
+    dir = "checkpoints/lm/run-2/";
+    for file in os.listdir(dir):
+        batch_size = 3
+
+        model = torch.load(os.path.join(dir, file), weights_only=False)
+        criterion = torch.nn.CrossEntropyLoss()
+
+        valid_data = get_data(validation_documents, vocabulary, batch_size)
+
+        seq_len = 50
+        valid_loss = evaluate(model, valid_data, criterion, batch_size, 
+                                seq_len, "cpu")
+        print("Model", file, "Evalutation loss", valid_loss)
+
+import json
+
+def do_train():
+    vocab_size = len(vocabulary)
+    embedding_dim = 1024             # 400 in the paper
+    hidden_dim = 1024                # 1150 in the paper
+    num_layers = 2                   # 3 in the paper
+    dropout_rate = 0.65              
+    tie_weights = True                  
+    lr = 3e-3                        # They used 30 and a different optimizer
+    batch_size=3
+    
+    model = LmRNN(
+        vocab=vocabulary,
+        embedding_dim=embedding_dim, 
+        hidden_dim=hidden_dim, 
+        num_layers=num_layers, 
+        dropout_rate=dropout_rate, 
+        tie_weights=tie_weights)
+    model.init_weights()
+
+    train_data = get_data(train_documents, vocabulary, batch_size)
+    valid_data = get_data(validation_documents, vocabulary, batch_size)
 
 
-optimizer = torch.optim.Adam(model.parameters(), lr=lr)
-criterion = torch.nn.CrossEntropyLoss()
+    optimizer = torch.optim.Adam(model.parameters(), lr=lr)
+    criterion = torch.nn.CrossEntropyLoss()
 
-n_epochs = 50
-seq_len = 50
-clip = 0.25
+    out_dir = "checkpoints/lm/default-params/"
+    os.makedirs(out_dir, exist_ok=True)
+    n_epochs = 5000
+    seq_len = 50
+    clip = 0.25
 
-save_model = True
+    save_model = True
 
-lr_scheduler = torch.optim.lr_scheduler.ReduceLROnPlateau(
-    optimizer, factor=0.5, patience=0)
+    train_losses = []
+    valid_losses = []
 
-best_valid_loss = float('inf')
-for epoch in range(n_epochs):
-    print(f"Start epoch {epoch}")
+    lr_scheduler = torch.optim.lr_scheduler.ReduceLROnPlateau(optimizer, factor=0.5, patience=0)
 
-    train_loss = train(model, train_data, optimizer, criterion,
-                       batch_size, seq_len, clip, "cpu")
-    valid_loss = evaluate(model, valid_data, criterion,
-                          batch_size, seq_len, "cpu")
+    for epoch in trange(n_epochs):
+        print(f"Start epoch {epoch}")
 
-    lr_scheduler.step(valid_loss)
+        train_loss = train(model, train_data, optimizer, criterion,
+                        batch_size, seq_len, clip, "cpu")
+        valid_loss = evaluate(model, valid_data, criterion, batch_size, 
+                            seq_len, "cpu")
 
-    if valid_loss < best_valid_loss:
-        best_valid_loss = valid_loss
+        lr_scheduler.step(train_loss)
+        train_losses.append(train_loss)
+        valid_losses.append(valid_loss)
 
-    print(f"i: {epoch}, Training loss {train_loss}")
-    print(f"i: {epoch}, Validation loss {valid_loss}")
-    if save_model:
-        torch.save(model, f"checkpoints/lm/run-1/model-epoch-{epoch+1}.pt")
+        print(f"i: {epoch}, Training loss {train_loss}")
+        print(f"i: {epoch}, Validation loss {valid_loss}")
+
+
+        with open("lm_train_data.json", "w") as f:
+            json.dump({"train": train_loss, "valid": valid_losses}, f)
+
+
+
+        if save_model and epoch % 10 == 0:
+            torch.save(model, os.path.join(out_dir, f"model-epoch-{epoch}.pt"))
 
 
 # %%
+do_train()

@@ -57,7 +57,10 @@ class GeoDataset(Dataset):
         waveform, original_sample_rate = torchaudio.load(audio_file_path)
         waveform = torchaudio.transforms.Resample(orig_freq=original_sample_rate, new_freq=self.resample_sample_rate)(waveform)
         waveform = waveform.squeeze(0) # Remove channel dimension
-        features = self.transform_fn(waveform.unsqueeze(0)).squeeze(0)
+        if self.transform_fn is not None:
+            features = self.transform_fn(waveform.unsqueeze(0)).squeeze(0)
+        else:
+             features = waveform.unsqueeze(0).squeeze(0)
         return features, transcript_ids, transcript
     
     def encode_transcript(self, transcript):
