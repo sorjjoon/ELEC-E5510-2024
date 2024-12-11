@@ -1,6 +1,7 @@
 import torch
 from torch import nn
 import torch.nn.functional as F
+from torchaudio.models.decoder import ctc_decoder
 
 
 class CNNLayerNorm(nn.Module):
@@ -42,7 +43,6 @@ class ResidualCNN(nn.Module):
         
 
 class BidirectionalGRU(nn.Module):
-
     def __init__(self, rnn_dim, hidden_size, dropout, batch_first):
         super(BidirectionalGRU, self).__init__()
 
@@ -61,8 +61,8 @@ class BidirectionalGRU(nn.Module):
 
 
 class SpeechRecognitionModel(nn.Module):
-    def __init__(self, n_cnn_layers=3, n_rnn_layers=5, rnn_dim=256, n_class=30, n_feats=128, stride=2, dropout=0.1):
-        super(SpeechRecognitionModel, self).__init__()
+    def __init__(self, n_cnn_layers=3, n_rnn_layers=2, rnn_dim=256, n_class=30, n_feats=128, stride=2, dropout=0.4):
+        super().__init__()
         n_feats = n_feats//2
         self.cnn = nn.Conv2d(1, 32, 3, stride=stride, padding=3//2)  # cnn for extracting heirachal features
 
@@ -71,7 +71,7 @@ class SpeechRecognitionModel(nn.Module):
             ResidualCNN(32, 32, kernel=3, stride=1, dropout=dropout, n_feats=n_feats) 
             for _ in range(n_cnn_layers)
         ])
-        self.fully_connected = nn.Linear(n_feats*32, rnn_dim)
+        self.fully_connected = nn.Linear(n_feats * 32, rnn_dim)
         self.birnn_layers = nn.Sequential(*[
             BidirectionalGRU(rnn_dim=rnn_dim if i==0 else rnn_dim*2,
                              hidden_size=rnn_dim, dropout=dropout, batch_first=i==0)
@@ -106,7 +106,7 @@ class SpeechRecognitionModel(nn.Module):
         for i in range(logits.shape[0]):
             unique_ids = pred_ids[i][-input_length[i]:]
             decoded_text = "".join([vocab[id.item()] for id in unique_ids])
-            decoded_texts.append(decoded_text)
+            decoded_texts.append(decoded_text.strip())
         return decoded_texts
     
     def greedy_decode_batch(self, logits, input_length, vocab):
@@ -116,6 +116,22 @@ class SpeechRecognitionModel(nn.Module):
             unique_ids = torch.unique_consecutive(pred_ids[i][-input_length[i]:])
             unique_ids = [id for id in unique_ids if id != 0]
             decoded_text = "".join([vocab[id.item()] for id in unique_ids])
-            decoded_texts.append(decoded_text)
+            decoded_texts.append(decoded_text.strip())
         return decoded_texts
+    
+    # def beam_search_decode_batch(self, logits, vocab):
+    #     decoded_texts = []
+    #     decoder = ctc_decoder(
+    #         lexicon=None,            
+    #         tokens="tokens.txt",     
+    #         lm=None,
+    #         blank_token="_",
+    #         sil_token='|',
+    #         beam_size=50,
+    #     )
+    #     results = decoder(logits)
+    #     tokens = results[0][0].tokens
+    #     decoded_text = "".join([vocab[id.item()] for id in tokens])
+    #     decoded_texts.append(decoded_text.strip())
+    #     return decoded_texts
         
