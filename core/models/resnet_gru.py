@@ -2,7 +2,6 @@ import torch
 from torch import nn
 import torch.nn.functional as F
 from torchaudio.models.decoder import ctc_decoder
-from torch.distributions import Categorical
 
 
 class CNNLayerNorm(nn.Module):
@@ -144,57 +143,3 @@ class SpeechRecognitionModel(nn.Module):
     #     decoded_text = "".join([vocab[id.item()] for id in tokens])
     #     decoded_texts.append(decoded_text.strip())
     #     return decoded_texts
-
-    def score_decode_batch(self, lm_scorer, logits, input_length, vocab, k=100, lm_weight=0.7, include_best_acoustic=False):
-        if lm_scorer is None or lm_weight is None or lm_weight == 0:
-            return self.greedy_decode_batch(logits, input_length, vocab)
-
-        def decode_text(topk_ids):
-            unique_ids = torch.unique_consecutive(
-                topk_ids[:][-input_length[i]:])
-            unique_ids = [id for id in unique_ids if id != 0]
-
-            return "".join([vocab[id.item()] for id in unique_ids])
-
-        def do_score(topk_ids, i, text):
-            prob = logits[i].gather(1, topk_ids.unsqueeze(-1)).squeeze(-1)
-
-            acoustic_score = prob[-input_length[i]:].sum().item()
-
-            lm_score = lm_scorer.score(text)
-
-            return (acoustic_score + lm_weight * lm_score, text)
-
-        decoded_texts = []
-
-        if include_best_acoustic:
-            best_predict = torch.argmax(logits, dim=-1)
-
-        dist = Categorical(logits=logits)
-        samples = dist.sample((k,))
-
-        for i in range(logits.shape[0]):
-            seen = set()
-            sequences = []
-
-            # Make sure to sample the top acoustic prediction
-            if include_best_acoustic:
-                t = decode_text(best_predict[i])
-                seen.add(t)
-                sequences.append(do_score(best_predict[i], i, t))
-
-            for j in range(k):
-                # Sample from top predictions
-                text = decode_text(samples[j, i])
-                if text in seen:
-                    continue
-
-                seen.add(text)
-                seq = do_score(samples[j, i], i, text)
-                sequences.append(seq)
-
-            # Sort based on score
-            sequences.sort(reverse=True)
-            sentence = sequences[0][1]
-            decoded_texts.append(sentence.strip())
-        return decoded_texts

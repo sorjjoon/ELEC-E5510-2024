@@ -11,7 +11,8 @@ from torchmetrics.text import WordErrorRate, CharErrorRate
 from core.models.resnet_gru import SpeechRecognitionModel
 from core.geo_dataloader_ctc import GeoDataset, GeoTestDataset, collate_fn
 from core.feature_transforms import LogMelSpec, Spectrogram, MFCC
-from core.utils import decode_batch, greedy_decode_batch, beam_search_decode_batch, get_logger
+from core.utils import decode_batch, greedy_decode_batch, beam_search_decode_batch, get_logger, score_decode_batch
+from core.models.LMScorer import KenlmLMScorer
 
 
 CHECKPOINT_DIR = "checkpoints/resnet_gru_2/run-6"
@@ -34,6 +35,8 @@ print(n_class)
 # %%
 # model = SpeechRecognitionModel(n_feats=40, n_class=n_class)
 model = torch.load("checkpoints/resnet_gru_2/run-5/model-epoch-50.pt")
+# lm scorer
+lm_scorer = KenlmLMScorer("kenlm/dev-4.arpa")
 
 # %%
 log = get_logger(CHECKPOINT_DIR)
@@ -88,6 +91,7 @@ dev_dataloader = DataLoader(
     dev_dataset, batch_size=16, shuffle=True, collate_fn=collate_fn)
 
 predicted_text = []
+lm_predicted_text = []
 # beam_predicted_text = []
 ground_truth_text = []
 
@@ -99,6 +103,8 @@ with torch.no_grad():
         # Variants of different encoding
         # beam_predicted_text += model.beam_search_decode_batch(logits, reverse_vocab)
         predicted_text += greedy_decode_batch(logits, None, reverse_vocab)
+        lm_predicted_text += score_decode_batch(
+            lm_scorer, logits, None, vocab, lm_weight=2.0)
 
         ground_truth_text += transcripts
 
