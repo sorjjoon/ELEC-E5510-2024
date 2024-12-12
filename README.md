@@ -10,3 +10,5 @@ Then, inside the **activated environment**, just install everything in `requirem
 ```
 pip install -r requirements.txt
 ```
+
+Note, requirements are only tested with python 3.10.2, any deviation may require a different set of dependencies.
