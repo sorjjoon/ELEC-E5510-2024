@@ -148,7 +148,6 @@ for batch in train_set:
         if char not in vocab and not char.isspace():
             vocab[char] = len(vocab)
 
-!nvidia-smi
 
 # %%
 with open('checkpoints/vocab.json', 'w') as vocab_file:
