@@ -1,5 +1,0 @@
-\babel@toc {english}{}
-\contentsline {section}{\numberline {1}The problem}{2}{}%
-\contentsline {section}{\numberline {2}Data}{2}{}%
-\contentsline {section}{\numberline {3}Methods and experiments}{2}{}%
-\contentsline {section}{\numberline {4}Tasks}{2}{}%
